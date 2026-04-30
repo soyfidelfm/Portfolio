@@ -33,7 +33,7 @@ export const PROJECTS: Project[] = [
     ],
     tech: ['.NET', 'Angular', 'SQL Server'],
     images: [
-      'assets/projects/yms-1.png',
+      'assets/projects/YMS1.png',
       'assets/projects/yms-2.png'
     ],
     liveUrl: 'https://sad.thekiddycloud.com', // cambia luego

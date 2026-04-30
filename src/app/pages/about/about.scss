@@ -1,0 +1,70 @@
+.about-page {
+  min-height: 100vh;
+  padding: 48px 7vw;
+  color: #ffffff;
+
+  background:
+    radial-gradient(circle at top left, rgba(91, 188, 255, 0.18), transparent 34%),
+    #06111f;
+
+  .back-link {
+    display: inline-flex;
+    margin-bottom: 32px;
+    color: #9bdcff;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: #ffffff;
+    }
+  }
+
+  .hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+    align-items: center;
+    margin-bottom: 40px;
+  }
+
+  .eyebrow {
+    margin: 0 0 14px;
+    color: #5bbcff;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  h1 {
+    margin: 0 0 18px;
+    font-size: clamp(32px, 4vw, 52px);
+    line-height: 1.05;
+  }
+
+  .lead {
+    max-width: 720px;
+    font-size: 18px;
+    color: #b9c7d6;
+    line-height: 1.7;
+  }
+
+  .section {
+    margin-top: 48px;
+    max-width: 900px;
+
+    h3 {
+      margin-bottom: 12px;
+      font-size: 20px;
+      color: #ffffff;
+    }
+
+    p {
+      color: #b9c7d6;
+      line-height: 1.75;
+      font-size: 16px;
+    }
+  }
+}

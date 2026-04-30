@@ -1,1 +1,79 @@
-<p>projects works!</p>
+<div class="projects-page">
+<a routerLink="/" class="back-link">← Back to home</a>
+  <div class="hero">
+    <p class="eyebrow">My Work</p>
+
+    <h1>Projects that showcase my experience</h1>
+
+    <p class="lead">
+      A selection of enterprise systems, APIs, and full-stack applications
+      I’ve designed and built using .NET, Angular, and cloud technologies.
+    </p>
+  </div>
+
+  <div class="projects-grid">
+
+    <!-- PROJECT 1 -->
+    <div class="project-card" routerLink="/projects/yms">
+      <img src="assets/YMS1.png" alt="YMS Project" />
+
+      <div class="content">
+        <h3>Yard Management System</h3>
+
+        <p>
+          Full logistics platform to manage yard operations, equipment tracking,
+          and real-time slot allocation.
+        </p>
+
+        <div class="tech">
+          <span>.NET</span>
+          <span>Angular</span>
+          <span>SQL Server</span>
+          <span>Azure</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROJECT 2 -->
+    <div class="project-card" routerLink="/projects/sad">
+      <img src="assets/SAD1.png" alt="Sales Dashboard" />
+
+      <div class="content">
+        <h3>Sales Advisor Dashboard</h3>
+
+        <p>
+          KPI dashboard for tracking memberships, credit cards, and sales
+          performance in real time.
+        </p>
+
+        <div class="tech">
+          <span>.NET API</span>
+          <span>Angular</span>
+          <span>PostgreSQL</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROJECT 3 -->
+    <div class="project-card" routerLink="/projects/kinderbooks">
+      <img src="assets/kinder.png" alt="KinderBooks" />
+
+      <div class="content">
+        <h3>KinderBooks API</h3>
+
+        <p>
+          Secure REST API with JWT authentication, refresh tokens,
+          and scalable architecture.
+        </p>
+
+        <div class="tech">
+          <span>.NET Core</span>
+          <span>MongoDB</span>
+          <span>JWT</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>

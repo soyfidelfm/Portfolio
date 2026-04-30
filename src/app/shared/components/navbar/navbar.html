@@ -1,10 +1,15 @@
 <nav class="navbar">
-  <div class="logo">FIDEL</div>
+
+  <div class="logo">
+    <span class="name">FIDEL FILIO MORENO</span>
+    <span class="role">LEAD SOFTWARE ENGINEER</span>
+  </div>
 
   <div class="links">
-    <a routerLink="/">Home</a>
-    <a routerLink="/about">About</a>
-    <a routerLink="/projects">Projects</a>
-    <a routerLink="/contact">Contact</a>
+    <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+    <a routerLink="/about" routerLinkActive="active">About</a>
+    <a routerLink="/projects" routerLinkActive="active">Projects</a>
+    <a routerLink="/contact" routerLinkActive="active" class="btn-contact">Contact Me</a>
   </div>
+
 </nav>

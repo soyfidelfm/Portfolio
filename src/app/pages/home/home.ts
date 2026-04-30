@@ -2,12 +2,12 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PROJECTS } from '../../core/data/projects.data';
 import { ProjectCardComponent } from '../../shared/components/project-card/project-card';
-import { Router } from '@angular/router';
+import { Router,RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, ProjectCardComponent],
+  imports: [CommonModule,RouterLink, ProjectCardComponent],
   templateUrl: './home.html',
   styleUrl: './home.scss'
 })
