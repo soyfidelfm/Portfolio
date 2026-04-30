@@ -1,0 +1,63 @@
+$bg-navbar: rgba(10, 20, 35, 0.85);
+$primary: #5bbcff;
+$text: #ffffff;
+$text-muted: #aab7c7;
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 32px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  background: $bg-navbar;
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+
+  .name {
+    font-weight: 800;
+    font-size: 16px;
+    letter-spacing: 1px;
+  }
+
+  .role {
+    font-size: 11px;
+    color: $text-muted;
+  }
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+
+  a {
+    text-decoration: none;
+    color: $text-muted;
+    font-size: 14px;
+    transition: 0.2s;
+
+    &:hover {
+      color: $primary;
+    }
+  }
+
+  .btn-contact {
+    background: $primary;
+    color: #06111f;
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-weight: 700;
+
+    &:hover {
+      background: lighten($primary, 5%);
+    }
+  }
+}

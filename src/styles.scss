@@ -1,1 +1,50 @@
-/* You can add global styles to this file, and also import other style files */
+/* IMPORTS */
+@use './app/styles/colors' as *;
+@use './app/styles/variables' as *;
+@use './app/styles/mixins' as *;
+
+/* RESET */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* BASE */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+  background: $bg-main;
+  color: $text-main;
+  font-family: Inter, Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+/* LINKS */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* IMAGES */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* BUTTON RESET */
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+}
+
+/* UTILIDAD PRO */
+.container {
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: 0 24px;
+}

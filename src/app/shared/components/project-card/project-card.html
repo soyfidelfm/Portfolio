@@ -1,0 +1,21 @@
+<article class="project-card" (click)="open()">
+  <div class="card-content">
+    <h4>{{ project.title }}</h4>
+
+    <p class="description">
+      {{ project.description }}
+    </p>
+
+    <div class="tech-stack">
+      <span *ngFor="let t of project.tech">{{ t }}</span>
+    </div>
+
+    <div class="project-result">
+      {{ project.impact[0] }}
+    </div>
+  </div>
+
+  <button class="btn-card" type="button">
+    Read Case Study
+  </button>
+</article>

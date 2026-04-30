@@ -1,0 +1,38 @@
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin glass {
+  backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+@mixin gradient-bg {
+  background: linear-gradient(
+    135deg,
+    rgba(91, 188, 255, 0.15),
+    transparent
+  );
+}
+
+@mixin hover-lift {
+  transition: all 0.2s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+  }
+}
+
+@mixin button-primary {
+  background: linear-gradient(180deg, lighten($primary, 5%), $primary);
+  color: #06111f;
+  border-radius: 7px;
+  font-weight: 700;
+  box-shadow: 0 10px 30px rgba(91, 188, 255, 0.25);
+
+  &:hover {
+    background: lighten($primary, 8%);
+  }
+}

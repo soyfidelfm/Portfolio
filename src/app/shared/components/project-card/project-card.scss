@@ -1,0 +1,100 @@
+@use '../../../styles/colors' as *;
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+:host {
+  display: block;
+  height: 100%;
+}
+
+.project-card {
+  min-height: 300px;
+  height: 100%;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  background:
+    linear-gradient(180deg, rgba(20, 42, 66, 0.92), rgba(12, 27, 45, 0.92));
+  border: 1px solid rgba(91, 188, 255, 0.28);
+  border-radius: 10px;
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.35);
+
+  cursor: pointer;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    border-color: rgba(91, 188, 255, 0.58);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+  }
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+}
+
+h4 {
+  margin: 0;
+  color: $text-main;
+  font-size: 22px;
+  line-height: 1.15;
+  font-weight: 900;
+  letter-spacing: -0.4px;
+}
+
+.description {
+  min-height: 64px;
+  margin: 12px 0 16px;
+  color: $text-muted;
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 18px;
+
+  span {
+    border: 1px solid rgba(91, 188, 255, 0.38);
+    background: rgba(91, 188, 255, 0.14);
+    color: $text-main;
+    padding: 5px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 800;
+  }
+}
+
+.project-result {
+  min-height: 44px;
+  color: $text-main;
+  font-size: 15px;
+  line-height: 1.45;
+  font-family: 'Courier New', monospace;
+}
+
+.btn-card {
+  width: 100%;
+  margin-top: 20px;
+  padding: 12px 16px;
+
+  background: linear-gradient(180deg, #70c8ff, #5bbcff);
+  color: #06111f;
+  border-radius: 7px;
+  font-size: 15px;
+  font-weight: 900;
+  text-align: center;
+
+  box-shadow: 0 12px 30px rgba(91, 188, 255, 0.22);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 36px rgba(91, 188, 255, 0.32);
+  }
+}

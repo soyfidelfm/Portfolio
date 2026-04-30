@@ -1,0 +1,86 @@
+<div class="portfolio-page">
+  <header class="topbar">
+    <div class="brand">
+      <h1>FIDEL FILIO MORENO</h1>
+      <span>LEAD SOFTWARE ENGINEER</span>
+    </div>
+
+    <nav class="nav-links">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#writing">Writing</a>
+      <a class="btn-contact" href="#contact">Contact Me</a>
+    </nav>
+  </header>
+
+  <main class="hero-section">
+    <section class="hero-content">
+      <div class="hero-text">
+        <h2>
+          BUILDING SCALABLE BUSINESS APPLICATIONS,<br />
+          LEADING MODERN FULL-STACK SOLUTIONS
+        </h2>
+
+        <p>
+          Lead Software Engineer specializing in .NET, Angular, API architecture,
+          authentication, databases, dashboards, and production-ready systems.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#projects" class="btn-primary">View Case Studies</a>
+          <a href="assets/resume/Fidel-Resume.pdf" class="btn-link" target="_blank">
+            Download Resume
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="diagram-card">
+          <div class="node main-node"></div>
+          <div class="node node-1"></div>
+          <div class="node node-2"></div>
+          <div class="node node-3"></div>
+          <div class="node node-4"></div>
+          <div class="line line-1"></div>
+          <div class="line line-2"></div>
+          <div class="line line-3"></div>
+          <div class="line line-4"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="impact-section">
+      <h3>KEY IMPACT & ACHIEVEMENTS</h3>
+
+      <div class="impact-grid">
+        <div class="impact-item">
+          <strong>10+</strong>
+          <span>Years of<br />Experience</span>
+        </div>
+
+        <div class="impact-item">
+          <strong>.NET</strong>
+          <span>API Architecture<br />& Backend Systems</span>
+        </div>
+
+        <div class="impact-item">
+          <strong>Angular</strong>
+          <span>Modern Frontend<br />Applications</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="projects-section">
+  <h3>FEATURED PROJECTS (CASE STUDIES)</h3>
+
+  <div class="projects-grid">
+  <app-project-card
+    *ngFor="let p of projects"
+    [project]="p"
+    (click)="goToProject(p.slug)">
+  </app-project-card>
+</div>
+</section>
+  </main>
+</div>
