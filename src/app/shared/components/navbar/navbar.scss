@@ -8,7 +8,7 @@ $dark: #06111f;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 16px 40px;
+  padding: 14px 40px;
   position: sticky;
   top: 0;
   z-index: 100;
@@ -21,19 +21,36 @@ $dark: #06111f;
 /* LOGO */
 .logo {
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
+  cursor: pointer;
+
+  .logo-img {
+    height: 48px;
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 0 8px rgba(91, 188, 255, 0.45));
+  }
+
+  .logo-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.05;
+  }
 
   .name {
     font-weight: 800;
-    font-size: 20px;
+    font-size: 18px;
     letter-spacing: 1px;
     color: $text;
   }
 
   .role {
-    font-size: 12px;
+    margin-top: 4px;
+    font-size: 11px;
     color: $text-muted;
-    letter-spacing: 1px;
+    letter-spacing: 1.4px;
   }
 }
 
@@ -86,10 +103,12 @@ $dark: #06111f;
     font-weight: 700;
     transition: all 0.25s ease;
     cursor: pointer;
+    box-shadow: 0 8px 22px rgba(91, 188, 255, 0.18);
 
     &:hover {
       background: lighten($primary, 6%);
       transform: translateY(-1px);
+      box-shadow: 0 12px 28px rgba(91, 188, 255, 0.28);
     }
 
     &.active {
@@ -112,15 +131,20 @@ $dark: #06111f;
   }
 
   .logo {
-    align-items: center;
-    text-align: center;
+    justify-content: center;
+    text-align: left;
+
+    .logo-img {
+      height: 44px;
+    }
 
     .name {
-      font-size: 17px;
+      font-size: 16px;
     }
 
     .role {
-      font-size: 11px;
+      font-size: 10px;
+      letter-spacing: 1.2px;
     }
   }
 
@@ -136,6 +160,24 @@ $dark: #06111f;
 
     .btn-contact {
       padding: 9px 14px;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    gap: 10px;
+
+    .logo-img {
+      height: 38px;
+    }
+
+    .name {
+      font-size: 14px;
+    }
+
+    .role {
+      font-size: 9px;
     }
   }
 }
