@@ -15,11 +15,7 @@ export class ProjectCardComponent {
 
   constructor(private router: Router) {}
 
-  open() {
-    if (this.project.liveUrl) {
-      window.open(this.project.liveUrl, '_blank');
-    } else {
-      this.router.navigate(['/projects', this.project.slug]);
-    }
+  open(): void {
+    this.router.navigate(['/projects', this.project.slug]);
   }
 }

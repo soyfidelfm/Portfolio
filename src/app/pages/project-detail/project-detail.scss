@@ -157,6 +157,28 @@ h1 {
   border-color: #5bbcff;
 }
 
+//***** IMPACT LIST *****//
+.impact-list {
+  margin-top: 20px;
+  padding-left: 0;
+  list-style: none;
+
+  li {
+    margin-bottom: 10px;
+    padding-left: 18px;
+    position: relative;
+    color: #aab7c7;
+
+    &::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #5bbcff;
+      font-weight: bold;
+    }
+  }
+}
+
 @media (max-width: 900px) {
   .project-detail {
     padding: 32px 20px;
