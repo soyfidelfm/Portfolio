@@ -1,0 +1,16 @@
+// styles/layout/_containers.scss
+
+@use '../variables' as *;
+
+.page-container {
+  width: 100%;
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: 34px 24px 90px;
+}
+
+@media (max-width: 650px) {
+  .page-container {
+    padding: 26px 18px 64px;
+  }
+}

@@ -1,0 +1,19 @@
+// styles/components/_tags.scss
+
+@use '../colors' as *;
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tag {
+  padding: 6px 9px;
+  border: 1px solid rgba(91, 188, 255, 0.24);
+  border-radius: 5px;
+  color: $text-main;
+  background: $primary-soft;
+  font-size: 12px;
+  line-height: 1;
+}

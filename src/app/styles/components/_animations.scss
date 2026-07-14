@@ -1,0 +1,123 @@
+@use '../colors' as *;
+
+/* ==========================================================
+   FADE
+========================================================== */
+
+.fade-in {
+  animation: fadeIn .5s ease forwards;
+}
+
+.fade-up {
+  animation: fadeUp .45s ease forwards;
+}
+
+.fade-down {
+  animation: fadeDown .45s ease forwards;
+}
+
+.scale-in {
+  animation: scaleIn .35s ease forwards;
+}
+
+/* ==========================================================
+   HOVER
+========================================================== */
+
+.hover-lift {
+  transition:
+    transform .25s ease,
+    box-shadow .25s ease;
+
+  &:hover{
+    transform:translateY(-4px);
+  }
+}
+
+.hover-glow{
+
+  transition:
+      box-shadow .25s ease;
+
+  &:hover{
+
+      box-shadow:
+      0 0 30px rgba(91,188,255,.22);
+
+  }
+
+}
+
+/* ==========================================================
+   KEYFRAMES
+========================================================== */
+
+@keyframes fadeIn{
+
+  from{
+
+      opacity:0;
+
+  }
+
+  to{
+
+      opacity:1;
+
+  }
+
+}
+
+@keyframes fadeUp{
+
+  from{
+
+      opacity:0;
+      transform:translateY(16px);
+
+  }
+
+  to{
+
+      opacity:1;
+      transform:none;
+
+  }
+
+}
+
+@keyframes fadeDown{
+
+  from{
+
+      opacity:0;
+      transform:translateY(-16px);
+
+  }
+
+  to{
+
+      opacity:1;
+      transform:none;
+
+  }
+
+}
+
+@keyframes scaleIn{
+
+  from{
+
+      opacity:0;
+      transform:scale(.94);
+
+  }
+
+  to{
+
+      opacity:1;
+      transform:scale(1);
+
+  }
+
+}

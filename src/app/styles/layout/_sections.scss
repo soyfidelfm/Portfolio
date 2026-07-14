@@ -1,0 +1,28 @@
+// styles/layout/_sections.scss
+
+@use '../colors' as *;
+
+.content-section {
+  padding: 64px 0;
+  border-bottom: 1px solid rgba(91, 188, 255, 0.1);
+}
+
+.section-heading {
+  max-width: 850px;
+  margin-bottom: 30px;
+
+  h2 {
+    margin: 0;
+    color: $text-main;
+    font-size: clamp(27px, 3vw, 38px);
+    font-weight: 900;
+    letter-spacing: -0.7px;
+    line-height: 1.15;
+  }
+}
+
+@media (max-width: 650px) {
+  .content-section {
+    padding: 48px 0;
+  }
+}

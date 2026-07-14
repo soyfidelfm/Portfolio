@@ -1,38 +1,493 @@
+@use './colors' as *;
+@use './variables' as *;
+
+/* FLEX */
+
 @mixin flex-center {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-@mixin glass {
-  backdrop-filter: blur(12px);
-  background: rgba(255, 255, 255, 0.05);
+/* GLASS */
+
+@mixin glass($opacity: 0.05, $blur: 12px) {
+  background: rgba(255, 255, 255, $opacity);
+  backdrop-filter: blur($blur);
+  -webkit-backdrop-filter: blur($blur);
 }
 
-@mixin gradient-bg {
+/* PAGE BACKGROUND */
+
+@mixin page-background {
+  display: block;
+  min-height: 100vh;
+  color: $text-main;
+
+  background:
+    radial-gradient(
+      circle at 75% 15%,
+      rgba(91, 188, 255, 0.15),
+      transparent 28%
+    ),
+    linear-gradient(
+      135deg,
+      $bg-main 0%,
+      #081523 50%,
+      #050b13 100%
+    );
+}
+
+/* HOVER */
+
+@mixin hover-lift($distance: -4px) {
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease;
+
+  &:hover {
+    transform: translateY($distance);
+  }
+}
+
+/* PRIMARY BUTTON */
+
+@mixin button-primary {
+  color: #06111f;
   background: linear-gradient(
-    135deg,
-    rgba(91, 188, 255, 0.15),
-    transparent
+    180deg,
+    lighten($primary, 5%),
+    $primary
   );
+
+  border: 0;
+  border-radius: 7px;
+
+  font-weight: 800;
+
+  box-shadow:
+    0 10px 30px rgba(91, 188, 255, 0.25);
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    background: lighten($primary, 8%);
+    box-shadow:
+      0 16px 36px rgba(91, 188, 255, 0.32);
+  }
 }
 
-@mixin hover-lift {
-  transition: all 0.2s ease;
+/* CARD SURFACE */
+
+@mixin card(
+  $padding: 24px,
+  $radius: 14px,
+  $background: rgba(15, 30, 48, 0.82),
+  $border-color: rgba(91, 188, 255, 0.16)
+) {
+  position: relative;
+  overflow: hidden;
+
+  padding: $padding;
+
+  border: 1px solid $border-color;
+  border-radius: $radius;
+
+  background: $background;
+
+  box-shadow:
+    0 18px 42px rgba(0, 0, 0, 0.2);
+
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease;
 
   &:hover {
     transform: translateY(-4px);
+
+    border-color:
+      rgba(91, 188, 255, 0.42);
+
+    box-shadow:
+      0 22px 48px rgba(91, 188, 255, 0.1);
   }
 }
 
-@mixin button-primary {
-  background: linear-gradient(180deg, lighten($primary, 5%), $primary);
-  color: #06111f;
-  border-radius: 7px;
-  font-weight: 700;
-  box-shadow: 0 10px 30px rgba(91, 188, 255, 0.25);
+/* TOP GLOW LINE */
+
+@mixin top-line(
+  $height: 1px,
+  $left: 20px,
+  $right: 20px,
+  $opacity: 0.7
+) {
+  &::before {
+    content: "";
+    position: absolute;
+
+    top: 0;
+    left: $left;
+    right: $right;
+
+    height: $height;
+
+    background:
+      linear-gradient(
+        90deg,
+        transparent,
+        rgba(91, 188, 255, 0.75),
+        transparent
+      );
+
+    opacity: $opacity;
+    pointer-events: none;
+  }
+}
+
+/* SECTION */
+
+@mixin section-block(
+  $padding: 64px 0,
+  $with-border: true
+) {
+  padding: $padding;
+
+  @if $with-border {
+    border-bottom:
+      1px solid rgba(91, 188, 255, 0.1);
+  }
+}
+
+/* TITLE */
+
+@mixin title(
+  $size: clamp(27px, 3vw, 38px),
+  $line-height: 1.15,
+  $letter-spacing: -0.7px
+) {
+  margin: 0;
+
+  color: $text-main;
+
+  font-size: $size;
+  font-weight: 900;
+  line-height: $line-height;
+  letter-spacing: $letter-spacing;
+}
+
+/* TAG */
+
+@mixin tag(
+  $padding: 6px 9px,
+  $font-size: 12px
+) {
+  display: inline-flex;
+  align-items: center;
+
+  padding: $padding;
+
+  border:
+    1px solid rgba(91, 188, 255, 0.22);
+
+  border-radius: 5px;
+
+  color: $text-main;
+  background: rgba(91, 188, 255, 0.06);
+
+  font-size: $font-size;
+  line-height: 1;
+}
+
+/* TWO-COLUMN GRID */
+
+@mixin two-column-grid(
+  $left: minmax(0, 1fr),
+  $right: minmax(0, 1fr),
+  $gap: 24px
+) {
+  display: grid;
+  grid-template-columns: $left $right;
+  gap: $gap;
+}
+
+/* RESPONSIVE GRID */
+
+@mixin responsive-grid(
+  $columns: 3,
+  $gap: 18px,
+  $min-width: 0
+) {
+  display: grid;
+  grid-template-columns:
+    repeat(
+      $columns,
+      minmax($min-width, 1fr)
+    );
+
+  gap: $gap;
+}
+
+/* TEXT */
+
+@mixin muted-text(
+  $size: 16px,
+  $line-height: 1.7
+) {
+  color: $text-muted;
+  font-size: $size;
+  line-height: $line-height;
+}@use './colors' as *;
+@use './variables' as *;
+
+/* FLEX */
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* GLASS */
+
+@mixin glass($opacity: 0.05, $blur: 12px) {
+  background: rgba(255, 255, 255, $opacity);
+  backdrop-filter: blur($blur);
+  -webkit-backdrop-filter: blur($blur);
+}
+
+/* PAGE BACKGROUND */
+
+@mixin page-background {
+  display: block;
+  min-height: 100vh;
+  color: $text-main;
+
+  background:
+    radial-gradient(
+      circle at 75% 15%,
+      rgba(91, 188, 255, 0.15),
+      transparent 28%
+    ),
+    linear-gradient(
+      135deg,
+      $bg-main 0%,
+      #081523 50%,
+      #050b13 100%
+    );
+}
+
+/* HOVER */
+
+@mixin hover-lift($distance: -4px) {
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease;
 
   &:hover {
-    background: lighten($primary, 8%);
+    transform: translateY($distance);
   }
+}
+
+/* PRIMARY BUTTON */
+
+@mixin button-primary {
+  color: #06111f;
+  background: linear-gradient(
+    180deg,
+    lighten($primary, 5%),
+    $primary
+  );
+
+  border: 0;
+  border-radius: 7px;
+
+  font-weight: 800;
+
+  box-shadow:
+    0 10px 30px rgba(91, 188, 255, 0.25);
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    background: lighten($primary, 8%);
+    box-shadow:
+      0 16px 36px rgba(91, 188, 255, 0.32);
+  }
+}
+
+/* CARD SURFACE */
+
+@mixin card(
+  $padding: 24px,
+  $radius: 14px,
+  $background: rgba(15, 30, 48, 0.82),
+  $border-color: rgba(91, 188, 255, 0.16)
+) {
+  position: relative;
+  overflow: hidden;
+
+  padding: $padding;
+
+  border: 1px solid $border-color;
+  border-radius: $radius;
+
+  background: $background;
+
+  box-shadow:
+    0 18px 42px rgba(0, 0, 0, 0.2);
+
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+
+    border-color:
+      rgba(91, 188, 255, 0.42);
+
+    box-shadow:
+      0 22px 48px rgba(91, 188, 255, 0.1);
+  }
+}
+
+/* TOP GLOW LINE */
+
+@mixin top-line(
+  $height: 1px,
+  $left: 20px,
+  $right: 20px,
+  $opacity: 0.7
+) {
+  &::before {
+    content: "";
+    position: absolute;
+
+    top: 0;
+    left: $left;
+    right: $right;
+
+    height: $height;
+
+    background:
+      linear-gradient(
+        90deg,
+        transparent,
+        rgba(91, 188, 255, 0.75),
+        transparent
+      );
+
+    opacity: $opacity;
+    pointer-events: none;
+  }
+}
+
+/* SECTION */
+
+@mixin section-block(
+  $padding: 64px 0,
+  $with-border: true
+) {
+  padding: $padding;
+
+  @if $with-border {
+    border-bottom:
+      1px solid rgba(91, 188, 255, 0.1);
+  }
+}
+
+/* TITLE */
+
+@mixin title(
+  $size: clamp(27px, 3vw, 38px),
+  $line-height: 1.15,
+  $letter-spacing: -0.7px
+) {
+  margin: 0;
+
+  color: $text-main;
+
+  font-size: $size;
+  font-weight: 900;
+  line-height: $line-height;
+  letter-spacing: $letter-spacing;
+}
+
+/* TAG */
+
+@mixin tag(
+  $padding: 6px 9px,
+  $font-size: 12px
+) {
+  display: inline-flex;
+  align-items: center;
+
+  padding: $padding;
+
+  border:
+    1px solid rgba(91, 188, 255, 0.22);
+
+  border-radius: 5px;
+
+  color: $text-main;
+  background: rgba(91, 188, 255, 0.06);
+
+  font-size: $font-size;
+  line-height: 1;
+}
+
+/* TWO-COLUMN GRID */
+
+@mixin two-column-grid(
+  $left: minmax(0, 1fr),
+  $right: minmax(0, 1fr),
+  $gap: 24px
+) {
+  display: grid;
+  grid-template-columns: $left $right;
+  gap: $gap;
+}
+
+/* RESPONSIVE GRID */
+
+@mixin responsive-grid(
+  $columns: 3,
+  $gap: 18px,
+  $min-width: 0
+) {
+  display: grid;
+  grid-template-columns:
+    repeat(
+      $columns,
+      minmax($min-width, 1fr)
+    );
+
+  gap: $gap;
+}
+
+/* TEXT */
+
+@mixin muted-text(
+  $size: 16px,
+  $line-height: 1.7
+) {
+  color: $text-muted;
+  font-size: $size;
+  line-height: $line-height;
 }

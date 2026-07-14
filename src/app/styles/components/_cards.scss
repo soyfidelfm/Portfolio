@@ -1,0 +1,67 @@
+@use '../colors' as *;
+
+.surface-card {
+  position: relative;
+  overflow: hidden;
+
+  border: 1px solid rgba(91, 188, 255, 0.16);
+  border-radius: 14px;
+
+  background: rgba(15, 30, 48, 0.82);
+
+  box-shadow:
+    0 18px 42px rgba(0, 0, 0, 0.20);
+
+  transition:
+    transform .25s ease,
+    border-color .25s ease,
+    background .25s ease,
+    box-shadow .25s ease;
+
+  &:hover {
+
+    transform: translateY(-4px);
+
+    border-color: rgba(91, 188, 255, .42);
+
+    box-shadow:
+      0 22px 48px rgba(91,188,255,.10);
+  }
+}
+
+.surface-card--glow {
+
+  &::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 20px;
+    right: 20px;
+
+    height: 1px;
+
+    background:
+      linear-gradient(
+        90deg,
+        transparent,
+        rgba(91,188,255,.75),
+        transparent
+      );
+  }
+
+}
+
+.surface-card--padding-sm {
+  padding:16px;
+}
+
+.surface-card--padding-md {
+  padding:24px;
+}
+
+.surface-card--padding-lg {
+  padding:32px;
+}

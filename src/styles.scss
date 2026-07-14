@@ -1,50 +1,104 @@
-/* IMPORTS */
+/* ==========================================================
+   DESIGN TOKENS
+========================================================== */
+
 @use './app/styles/colors' as *;
 @use './app/styles/variables' as *;
-@use './app/styles/mixins' as *;
 
-/* RESET */
+/* ==========================================================
+   GLOBAL COMPONENTS
+========================================================== */
+
+@use './app/styles/components/buttons';
+@use './app/styles/components/cards';
+@use './app/styles/components/labels';
+@use './app/styles/components/tags';
+@use './app/styles/components/typography';
+@use './app/styles/components/animations';
+
+/* ==========================================================
+   LAYOUT
+========================================================== */
+
+@use './app/styles/layout/containers';
+@use './app/styles/layout/sections';
+@use './app/styles/layout/grid';
+
+/* ==========================================================
+   RESET
+========================================================== */
+
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
-/* BASE */
+html {
+  scroll-behavior: smooth;
+}
+
 html,
 body {
   margin: 0;
   padding: 0;
   width: 100%;
   min-height: 100%;
+}
+
+body {
   background: $bg-main;
   color: $text-main;
-  font-family: Inter, Arial, sans-serif;
+  font-family: Inter, Arial, Helvetica, sans-serif;
   overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* LINKS */
+/* ==========================================================
+   ELEMENTS
+========================================================== */
+
 a {
-  text-decoration: none;
   color: inherit;
+  text-decoration: none;
 }
 
-/* IMAGES */
-img {
-  max-width: 100%;
+img,
+svg {
   display: block;
+  max-width: 100%;
 }
 
-/* BUTTON RESET */
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
 button {
-  font-family: inherit;
   cursor: pointer;
-  border: none;
+  border: 0;
+  background: transparent;
 }
 
-/* UTILIDAD PRO */
+/* ==========================================================
+   GLOBAL UTILITIES
+========================================================== */
+
 .container {
+  width: 100%;
   max-width: $max-width;
   margin: 0 auto;
-  padding: 0 24px;
+  padding-inline: 24px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.hidden {
+  display: none !important;
 }
