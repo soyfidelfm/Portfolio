@@ -1,114 +1,162 @@
 <div class="portfolio-page">
-
-  <main class="hero-section">
+  <main class="page-container">
 
     <!-- HERO -->
-    <section class="hero-content">
-      <div class="hero-text">
-        <h2>
-          BUILDING SCALABLE BUSINESS APPLICATIONS,<br />
-          LEADING MODERN FULL-STACK SOLUTIONS
-        </h2>
+    <section class="hero">
+      <div class="hero__content">
+        <div class="hero__text fade-up">
+          <h1 class="page-title">
+            BUILDING SCALABLE BUSINESS APPLICATIONS,
+            <br />
+            LEADING MODERN FULL-STACK SOLUTIONS
+          </h1>
 
-        <p>
-          Lead .NET Software Engineer with 12+ years of experience leading teams,
-          architecting enterprise systems, and delivering scalable cloud-based
-          applications using .NET, Angular, Azure, SQL Server, and modern API architectures.
-        </p>
+          <p class="lead hero__description">
+            Lead .NET Software Engineer with 12+ years of experience leading teams,
+            architecting enterprise systems, and delivering scalable cloud-based
+            applications using .NET, Angular, Azure, SQL Server, and modern API
+            architectures.
+          </p>
 
-        <div class="hero-actions">
-          <a href="#projects" class="btn-primary">View Case Studies</a>
+          <div class="hero__actions">
+            <a
+              href="#projects"
+              class="btn-primary">
+              View Case Studies
+            </a>
 
-          <a
-            href="assets/Fidel Filio Moreno Software Engineer Lead.docx"
-            class="btn-link"
-            target="_blank">
-            Download Resume
-          </a>
+            <a
+              href="assets/Fidel Filio Moreno Software Engineer Lead.docx"
+              class="btn-link"
+              target="_blank"
+              rel="noopener noreferrer">
+              Download Resume
+            </a>
+          </div>
         </div>
-      </div>
 
-      <!-- VISUAL -->
-      <div class="hero-visual">
-        <div class="diagram-card">
-          <div class="node main-node"></div>
-          <div class="node node-1"></div>
-          <div class="node node-2"></div>
-          <div class="node node-3"></div>
-          <div class="node node-4"></div>
+        <!-- VISUAL -->
+        <div class="hero__visual scale-in" aria-hidden="true">
+          <div class="diagram">
+            <div class="diagram__node diagram__node--main"></div>
+            <div class="diagram__node diagram__node--one"></div>
+            <div class="diagram__node diagram__node--two"></div>
+            <div class="diagram__node diagram__node--three"></div>
+            <div class="diagram__node diagram__node--four"></div>
 
-          <div class="line line-1"></div>
-          <div class="line line-2"></div>
-          <div class="line line-3"></div>
-          <div class="line line-4"></div>
+            <div class="diagram__line diagram__line--one"></div>
+            <div class="diagram__line diagram__line--two"></div>
+            <div class="diagram__line diagram__line--three"></div>
+            <div class="diagram__line diagram__line--four"></div>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- IMPACT -->
-    <section class="impact-section">
-      <h3>KEY IMPACT & ACHIEVEMENTS</h3>
+    <section class="content-section">
+      <span class="section-label">Key Impact & Achievements</span>
 
-      <div class="impact-grid">
-        <div class="impact-item">
-          <strong>12+</strong>
-          <span>Years Building<br />Enterprise Software</span>
-        </div>
+      <div class="grid-3">
+        <article class="impact-card surface-card surface-card--glow">
+          <strong class="metric">12+</strong>
 
-        <div class="impact-item">
-          <strong>73%</strong>
-          <span>Processing Time<br />Reduction</span>
-        </div>
+          <span>
+            Years Building
+            <br />
+            Enterprise Software
+          </span>
+        </article>
 
-        <div class="impact-item">
-          <strong>30%</strong>
-          <span>Production Incident<br />Reduction</span>
-        </div>
+        <article class="impact-card surface-card surface-card--glow">
+          <strong class="metric">73%</strong>
+
+          <span>
+            Processing Time
+            <br />
+            Reduction
+          </span>
+        </article>
+
+        <article class="impact-card surface-card surface-card--glow">
+          <strong class="metric">30%</strong>
+
+          <span>
+            Production Incident
+            <br />
+            Reduction
+          </span>
+        </article>
       </div>
     </section>
 
-    <!-- TECH -->
-    <section class="tech-section">
-      <h3>CORE TECHNOLOGIES</h3>
+    <!-- TECHNOLOGIES -->
+    <section class="content-section">
+      <span class="section-label">Core Technologies</span>
 
-      <div class="tech-cards">
+      <div class="grid-4">
+        <article
+          class="surface-card surface-card--glow surface-card--padding-md hover-glow">
+          <span class="label">Backend</span>
 
-        <div class="tech-card">
-          <span class="tech-label">Backend</span>
-          <h4>.NET / APIs</h4>
-          <p>ASP.NET Core, C#, Entity Framework, REST APIs, Microservices</p>
-        </div>
+          <h2 class="card-title">.NET / APIs</h2>
 
-        <div class="tech-card">
-          <span class="tech-label">Frontend</span>
-          <h4>Angular / UI</h4>
-          <p>Angular, TypeScript, React, Blazor, responsive enterprise interfaces</p>
-        </div>
+          <p class="body-small">
+            ASP.NET Core, C#, Entity Framework, REST APIs and Microservices.
+          </p>
+        </article>
 
-        <div class="tech-card">
-          <span class="tech-label">Data</span>
-          <h4>Databases</h4>
-          <p>SQL Server, PostgreSQL, MongoDB Atlas, DB2, reporting data models</p>
-        </div>
+        <article
+          class="surface-card surface-card--glow surface-card--padding-md hover-glow">
+          <span class="label">Frontend</span>
 
-        <div class="tech-card">
-          <span class="tech-label">Cloud & DevOps</span>
-          <h4>Azure / CI/CD</h4>
-          <p>Azure, AWS, Azure DevOps, GitHub, GitLab, production deployments</p>
-        </div>
+          <h2 class="card-title">Angular / UI</h2>
 
+          <p class="body-small">
+            Angular, TypeScript, React, Blazor and responsive enterprise
+            interfaces.
+          </p>
+        </article>
+
+        <article
+          class="surface-card surface-card--glow surface-card--padding-md hover-glow">
+          <span class="label">Data</span>
+
+          <h2 class="card-title">Databases</h2>
+
+          <p class="body-small">
+            SQL Server, PostgreSQL, MongoDB Atlas, DB2 and reporting data models.
+          </p>
+        </article>
+
+        <article
+          class="surface-card surface-card--glow surface-card--padding-md hover-glow">
+          <span class="label">Cloud & DevOps</span>
+
+          <h2 class="card-title">Azure / CI/CD</h2>
+
+          <p class="body-small">
+            Azure, AWS, Azure DevOps, GitHub, GitLab and production deployments.
+          </p>
+        </article>
       </div>
     </section>
 
     <!-- PROJECTS -->
-    <section class="projects-section" id="projects">
-      <h3>FEATURED PROJECTS (CASE STUDIES)</h3>
+    <section
+      id="projects"
+      class="content-section projects-section">
+      <span class="section-label">Featured Projects</span>
 
-      <div class="projects-grid">
+      <h2 class="section-title projects-section__title">
+        Case Studies
+      </h2>
+
+      <div class="grid-3">
         <app-project-card
-  *ngFor="let p of projects"
-  [project]="p">
-</app-project-card>
+          *ngFor="let project of projects"
+          [project]="project">
+        </app-project-card>
       </div>
     </section>
 

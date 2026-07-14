@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { PROJECTS } from '../../core/data/projects.data';
 
 @Component({
   selector: 'app-projects',
@@ -9,4 +10,5 @@ import { RouterLink } from '@angular/router';
 })
 export class ProjectsComponent {
 
+readonly projects = PROJECTS;
 }

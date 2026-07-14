@@ -1,76 +1,49 @@
 <div class="projects-page">
-<a routerLink="/" class="back-link">← Back to home</a>
-  <div class="hero">
-    <p class="eyebrow">My Work</p>
+  <div class="projects-container">
+    <a routerLink="/" class="back-link">
+      <span>←</span>
+      Back to home
+    </a>
 
-    <h1>Projects that showcase my experience</h1>
+    <header class="projects-hero">
+      <p class="eyebrow">My Work</p>
 
-    <p class="lead">
-      A selection of enterprise systems, APIs, and full-stack applications
-      I’ve designed and built using .NET, Angular, and cloud technologies.
-    </p>
+      <h1>Projects that showcase my experience</h1>
+
+      <p class="lead">
+        A selection of enterprise systems, APIs, and full-stack applications
+        I’ve designed and built using .NET, Angular, and cloud technologies.
+      </p>
+    </header>
+
+    <section class="projects-grid">
+      @for (project of projects; track project.id) {
+        <article
+          class="project-card"
+          [routerLink]="['/projects', project.slug]"
+        >
+          <div class="project-image">
+            <img
+              [src]="project.images[0]"
+              [alt]="project.title"
+            />
+          </div>
+
+          <div class="project-content">
+            <h2>{{ project.title }}</h2>
+
+            <p>
+              {{ project.description }}
+            </p>
+
+            <div class="project-tech">
+              @for (technology of project.tech; track technology) {
+                <span>{{ technology }}</span>
+              }
+            </div>
+          </div>
+        </article>
+      }
+    </section>
   </div>
-
-  <div class="projects-grid">
-
-    <!-- PROJECT 1 -->
-    <div class="project-card" routerLink="/projects/yms">
-      <img src="assets/YMS1.png" alt="YMS Project" />
-
-      <div class="content">
-        <h3>Yard Management System</h3>
-
-        <p>
-          Full-stack yard management platform with real-time tracking, slot management, dock scheduling, and operational workflows to optimize logistics efficiency.
-        </p>
-
-        <div class="tech">
-          <span>.NET</span>
-          <span>Angular</span>
-          <span>SQL Server</span>
-          <span>Azure</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- PROJECT 2 -->
-    <div class="project-card" routerLink="/projects/sales-advisor-dashboard">
-      <img src="assets/SAD1.png" alt="Sales Dashboard" />
-
-      <div class="content">
-        <h3>Sales Advisor Dashboard</h3>
-
-        <p>
-          Full-stack sales tracking dashboard with OAuth integration, real-time KPI monitoring, and performance metrics for credit cards, memberships, and daily targets.
-        </p>
-
-        <div class="tech">
-          <span>.NET API</span>
-          <span>Angular</span>
-          <span>PostgreSQL</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- PROJECT 3 -->
-    <div class="project-card" routerLink="/projects/kiddycloud">
-      <img src="assets/kinder.png" alt="kiddycloud" />
-
-      <div class="content">
-        <h3>The Kiddycloud</h3>
-
-        <p>
-          The Kiddy Cloud is a full-stack preschool management platform that centralizes student records, classroom management, school activities, and digital library operations.
-        </p>
-
-        <div class="tech">
-          <span>.NET Core</span>
-          <span>MongoDB</span>
-          <span>JWT</span>
-        </div>
-      </div>
-    </div>
-
-  </div>
-
 </div>

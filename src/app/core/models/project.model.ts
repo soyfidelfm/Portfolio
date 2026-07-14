@@ -8,7 +8,7 @@ export interface Project {
   impactText?: string;   // texto introductorio para la sección de impacto
   impact: string[];      // resultados medibles
   tech: string[];
-  images?: string[];
+  images: string[];
   liveUrl?: string;
   repoUrl?: string;
 }
