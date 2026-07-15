@@ -86,7 +86,7 @@ export const PROJECTS: Project[] = [
     tech: ['.NET', 'Angular', 'MongoDB'],
     images: [
       'assets/YMS1.png',
-      'assets/projects/yms-2.png'
+      'assets/YMS2.png'
     ],
     liveUrl: '',
     repoUrl: 'https://github.com/soyfidelfm/YMS'
@@ -111,7 +111,8 @@ export const PROJECTS: Project[] = [
     ],
     tech: ['.NET', 'Angular', 'SQL Server'],
     images: [
-      'assets/projects/kiddy.png'
+      'assets/kiddy1.png',
+      'assets/kiddy2.png'
     ],
     liveUrl: '',
     repoUrl: ''
