@@ -7,9 +7,7 @@
 
     <section class="contact-hero">
       <span class="section-label">CONTACT ME</span>
-
       <h1>Let’s build something impactful together</h1>
-
       <p>
         I'm open to senior and lead engineering roles, consulting opportunities,
         and high-impact projects. If you have something interesting in mind,
@@ -29,15 +27,11 @@
         <div class="contact-list">
           <div class="contact-item">
             <span>Email</span>
-
-            <a href="mailto:fidelfilio@icloud.com">
-              fidelfilio@icloud.com
-            </a>
+            <a href="mailto:fidelfilio@icloud.com">fidelfilio@icloud.com</a>
           </div>
 
           <div class="contact-item">
             <span>LinkedIn</span>
-
             <a
               href="https://www.linkedin.com/in/fidelfm/"
               target="_blank"
@@ -49,7 +43,6 @@
 
           <div class="contact-item">
             <span>GitHub</span>
-
             <a
               href="https://github.com/soyfidelfm/"
               target="_blank"
@@ -66,61 +59,91 @@
         </div>
       </article>
 
-      <form class="contact-card contact-form">
+      <form [formGroup]="contactForm" (ngSubmit)="sendEmail()" class="contact-card contact-form" novalidate>
         <div class="form-header">
           <h2>Send a message</h2>
           <p>I’ll get back to you as soon as possible.</p>
         </div>
 
-        <div class="form-group">
+        <div class="form-group" [class.has-error]="isFieldInvalid('name')">
           <label for="contact-name">Name</label>
-
           <input
             id="contact-name"
-            name="name"
+            formControlName="name"
             type="text"
             placeholder="Your name"
             autocomplete="name"
           />
+          @if (isFieldInvalid('name')) {
+            <span class="error-text">Name is required.</span>
+          }
         </div>
 
-        <div class="form-group">
+        <div class="form-group" [class.has-error]="isFieldInvalid('email')">
           <label for="contact-email">Email</label>
-
           <input
             id="contact-email"
-            name="email"
+            formControlName="email"
             type="email"
             placeholder="your@email.com"
             autocomplete="email"
           />
+          @if (isFieldInvalid('email')) {
+            <span class="error-text">
+              @if (contactForm.get('email')?.hasError('required')) {
+                Email is required.
+              } @else if (contactForm.get('email')?.hasError('email')) {
+                Please enter a valid email address.
+              }
+            </span>
+          }
         </div>
 
-        <div class="form-group">
+        <div class="form-group" [class.has-error]="isFieldInvalid('subject')">
           <label for="contact-subject">Subject</label>
-
           <input
             id="contact-subject"
-            name="subject"
+            formControlName="subject"
             type="text"
             placeholder="Opportunity, project, or question"
           />
+          @if (isFieldInvalid('subject')) {
+            <span class="error-text">Subject is required.</span>
+          }
         </div>
 
-        <div class="form-group">
+        <div class="form-group" [class.has-error]="isFieldInvalid('message')">
           <label for="contact-message">Message</label>
-
           <textarea
             id="contact-message"
-            name="message"
+            formControlName="message"
             rows="5"
             placeholder="Tell me about your project or opportunity"
           ></textarea>
+          @if (isFieldInvalid('message')) {
+            <span class="error-text">
+              @if (contactForm.get('message')?.hasError('required')) {
+                Message is required.
+              } @else if (contactForm.get('message')?.hasError('minlength')) {
+                Message must be at least 10 characters long.
+              }
+            </span>
+          }
         </div>
 
-        <button type="submit" class="btn-primary">
-          Send Message
+        <button 
+          type="submit" 
+          class="btn-primary" 
+          [disabled]="isSending"
+        >
+          {{ isSending ? 'Sending...' : 'Send Message' }}
         </button>
+
+        @if (statusMessage) {
+          <p class="status-message" [class.success]="isSuccess" [class.error]="!isSuccess">
+            {{ statusMessage }}
+          </p>
+        }
       </form>
     </section>
   </main>
