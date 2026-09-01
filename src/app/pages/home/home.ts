@@ -22,7 +22,7 @@ import { ProjectCardComponent } from '../../shared/components/project-card/proje
 export class HomeComponent implements OnInit {
   projects = PROJECTS.slice(0, 3);
   
-  showModal = true;
+  showModal = false; // Inicia en false para evitar parpadeos
   userName = '';
   userEmail = '';
   userIp = 'Fetching IP...';
@@ -30,7 +30,18 @@ export class HomeComponent implements OnInit {
   private emailSent = false;
 
   ngOnInit() {
-    this.fetchIpAndLocation();
+    this.checkVisitorStatus();
+  }
+
+  private checkVisitorStatus() {
+    // Revisa si el usuario ya interactuó con el modal en la sesión actual
+    const hasVisited = sessionStorage.getItem('portfolio_visited');
+
+    if (!hasVisited) {
+      // Si es una pestaña/sesión nueva, muestra el modal e inicia la carga de IP/Ubicación
+      this.showModal = true;
+      this.fetchIpAndLocation();
+    }
   }
 
   fetchIpAndLocation() {
@@ -62,13 +73,19 @@ export class HomeComponent implements OnInit {
 
   confirmData() {
     this.sendEmail('Data Registered (Confirmed)');
-    this.showModal = false;
+    this.markAsVisited();
   }
 
   closeModal() {
     if (!this.emailSent) {
       this.sendEmail('Popup Closed / Canceled (No input)');
     }
+    this.markAsVisited();
+  }
+
+  private markAsVisited() {
+    // Guarda la marca activa únicamente para esta sesión de navegación
+    sessionStorage.setItem('portfolio_visited', 'true');
     this.showModal = false;
   }
 
