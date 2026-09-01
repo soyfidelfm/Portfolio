@@ -1,4 +1,48 @@
 <div class="portfolio-page">
+
+  <div class="welcome-modal-overlay" *ngIf="showModal">
+    <div class="welcome-modal surface-card surface-card--glow">
+      <div class="modal-header">
+        <h2>Welcome to my Portfolio!</h2>
+        <button class="close-btn" (click)="closeModal()">&times;</button>
+      </div>
+      
+      <p class="body-small">
+        Please enter your details to continue exploring, or feel free to close this window.
+      </p>
+
+      <form (ngSubmit)="confirmData()" class="modal-form">
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input 
+            type="text" 
+            id="name" 
+            [(ngModel)]="userName" 
+            name="userName" 
+            placeholder="Your name" 
+            required 
+            class="form-input" />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address:</label>
+          <input 
+            type="email" 
+            id="email" 
+            [(ngModel)]="userEmail" 
+            name="userEmail" 
+            placeholder="your.email@domain.com" 
+            required 
+            class="form-input" />
+        </div>
+
+        <div class="modal-actions">
+          <button type="button" class="btn-link" (click)="closeModal()">Cancel / Close</button>
+          <button type="submit" class="btn-primary">Confirm</button>
+        </div>
+      </form>
+    </div>
+  </div>
   <main class="page-container">
 
     <!-- HERO -->
