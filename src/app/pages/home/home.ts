@@ -76,17 +76,30 @@ export class HomeComponent implements OnInit {
     if (this.emailSent) return;
     this.emailSent = true;
 
+    // Formato de hora convertido a PST (Pacific Standard Time)
+    const pstTime = new Intl.DateTimeFormat('en-US', {
+      timeZone: 'America/Los_Angeles',
+      dateStyle: 'full',
+      timeStyle: 'medium'
+    }).format(new Date());
+
     const templateParams = {
       to_email: 'fidelfilio@icloud.com',
       visitor_name: this.userName.trim() || 'Anonymous / Not provided',
       visitor_email: this.userEmail.trim() || 'Not provided',
       visitor_ip: this.userIp,
       visitor_location: this.userLocation,
-      action: actionStatus
+      action: actionStatus,
+      timestamp: pstTime
     };
 
-    // Replace with your actual EmailJS credentials
-    emailjs.send('TU_SERVICE_ID', 'TU_TEMPLATE_ID', templateParams, 'TU_PUBLIC_KEY')
+    // Reemplaza con tus IDs reales de EmailJS
+    const SERVICE_ID = 'service_r6rgmen';
+    const TEMPLATE_ID = 'template_pa2uspr';
+    const PUBLIC_KEY = 'ucldgL879wkI1OnLX';
+
+    emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY)
+      .then(res => console.log('Email sent successfully!', res.status, res.text))
       .catch(err => console.error('Error sending automated email:', err));
   }
 }
