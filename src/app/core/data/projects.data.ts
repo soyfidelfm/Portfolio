@@ -36,7 +36,7 @@ export const PROJECTS: Project[] = [
       'assets/eleaguefutbol-1.png',
       'assets/eleaguefutbol-2.png'
     ],
-    liveUrl: 'https://eleaguefutbol.com',
+    liveUrl: '',
     repoUrl: 'https://github.com/soyfidelfm/eLeagueFutbol'
   },
   {
@@ -61,7 +61,7 @@ export const PROJECTS: Project[] = [
     ],
     tech: ['.NET 10', 'ASP.NET Core', 'EF Core', 'PostgreSQL', 'Angular'],
     images: [],
-    liveUrl: 'https://wms-orcin-gamma.vercel.app',
+    liveUrl: '',
     repoUrl: 'https://github.com/soyfidelfm/WMS'
   },
   {
@@ -116,7 +116,7 @@ export const PROJECTS: Project[] = [
       'assets/SAD1.png',
       'assets/SAD2.png'
     ],
-    liveUrl: 'https://sad.thekiddycloud.com',
+    liveUrl: '',
     repoUrl: 'https://github.com/soyfidelfm/SAD'
   },
   {
@@ -144,52 +144,52 @@ export const PROJECTS: Project[] = [
       'assets/kiddy2.png'
     ],
     liveUrl: '',
-    repoUrl: 'https://github.com/soyfidelfm/KiddyCloud'
-  },
-  {
-    id: 'kinderbooks',
-    slug: 'kinderbooks',
-    title: 'KinderBooks',
-    description:
-      'Shared book-management system for kindergartens in School Zone 61 in Nuevo Laredo.',
-    overview:
-      'KinderBooks was built so the kindergartens of Zona Escolar 61 can manage library books as a zone, not as isolated campuses. Schools can keep a common catalog, know which titles exist, and stop relying on paper lists or spreadsheets that never stay in sync across gardens.',
-    architecture:
-      'Private education-operations application in the same family as KiddyCloud. Designed as a centralized web system for multi-campus book control across a school zone.',
-    impactText:
-      'Gives a full school zone one catalog and inventory for kindergarten books instead of fragmented records at each campus.',
-    impact: [
-      'Zone-wide book catalog for multiple kindergartens',
-      'Replaces per-campus spreadsheets and paper lists',
-      'Built for School Zone 61 in Nuevo Laredo'
-    ],
-    tech: ['.NET', 'Angular'],
-    images: [],
-    liveUrl: '',
     repoUrl: 'https://github.com/soyfidelfm/KinderBooks'
   },
-  {
-    id: 'gaspool',
-    slug: 'gaspool',
-    title: 'GasPool',
-    description:
-      'Field application for capturing and controlling serial numbers of residential gas equipment.',
-    overview:
-      'GasPool is an Angular application used to record serial numbers for residential gas units. The companion API, GasPoolApi, stores and exposes those records so technicians and office staff are not tracking equipment identity in chats or notebooks. It continues the idea started in ResidentialGasPool: a dedicated tool for serial control.',
-    architecture:
-      'Angular 17 client with an Express server for the production build, backed by a separate ASP.NET API in GasPoolApi. The split keeps field capture in the frontend and persistence/rules in the API.',
-    impactText:
-      'Makes equipment identity searchable and auditable, which is the baseline for warranty, service, and inventory control in residential gas work.',
-    impact: [
-      'Serial-number capture for residential gas units',
-      'Separate Angular client and .NET API',
-      'Replaces informal serial tracking'
-    ],
-    tech: ['Angular', '.NET', 'TypeScript'],
-    images: [],
-    liveUrl: '',
-    repoUrl: 'https://github.com/soyfidelfm/GasPool'
-  },
+  // {
+  //   id: 'kinderbooks',
+  //   slug: 'kinderbooks',
+  //   title: 'KinderBooks',
+  //   description:
+  //     'Shared book-management system for kindergartens in School Zone 61 in Nuevo Laredo.',
+  //   overview:
+  //     'KinderBooks was built so the kindergartens of Zona Escolar 61 can manage library books as a zone, not as isolated campuses. Schools can keep a common catalog, know which titles exist, and stop relying on paper lists or spreadsheets that never stay in sync across gardens.',
+  //   architecture:
+  //     'Private education-operations application in the same family as KiddyCloud. Designed as a centralized web system for multi-campus book control across a school zone.',
+  //   impactText:
+  //     'Gives a full school zone one catalog and inventory for kindergarten books instead of fragmented records at each campus.',
+  //   impact: [
+  //     'Zone-wide book catalog for multiple kindergartens',
+  //     'Replaces per-campus spreadsheets and paper lists',
+  //     'Built for School Zone 61 in Nuevo Laredo'
+  //   ],
+  //   tech: ['.NET', 'Angular'],
+  //   images: [],
+  //   liveUrl: '',
+  //   repoUrl: 'https://github.com/soyfidelfm/KinderBooks'
+  // },
+  // {
+  //   id: 'gaspool',
+  //   slug: 'gaspool',
+  //   title: 'GasPool',
+  //   description:
+  //     'Field application for capturing and controlling serial numbers of residential gas equipment.',
+  //   overview:
+  //     'GasPool is an Angular application used to record serial numbers for residential gas units. The companion API, GasPoolApi, stores and exposes those records so technicians and office staff are not tracking equipment identity in chats or notebooks. It continues the idea started in ResidentialGasPool: a dedicated tool for serial control.',
+  //   architecture:
+  //     'Angular 17 client with an Express server for the production build, backed by a separate ASP.NET API in GasPoolApi. The split keeps field capture in the frontend and persistence/rules in the API.',
+  //   impactText:
+  //     'Makes equipment identity searchable and auditable, which is the baseline for warranty, service, and inventory control in residential gas work.',
+  //   impact: [
+  //     'Serial-number capture for residential gas units',
+  //     'Separate Angular client and .NET API',
+  //     'Replaces informal serial tracking'
+  //   ],
+  //   tech: ['Angular', '.NET', 'TypeScript'],
+  //   images: [],
+  //   liveUrl: '',
+  //   repoUrl: 'https://github.com/soyfidelfm/GasPool'
+  // },
   {
     id: 'jobtracker',
     slug: 'jobtracker',
@@ -212,91 +212,91 @@ export const PROJECTS: Project[] = [
     liveUrl: '',
     repoUrl: 'https://github.com/soyfidelfm/JobTracker'
   },
-  {
-    id: 'raypakaudit',
-    slug: 'raypakaudit',
-    title: 'RaypakAudit',
-    description:
-      'Structured audit tool for equipment and process reviews in a Raypak operations context.',
-    overview:
-      'RaypakAudit is an internal application for running audits against equipment or process checklists. Instead of collecting findings in email and paper forms, the audit lives in a system that can be revisited, compared, and completed with a consistent structure.',
-    architecture:
-      'Private operational application. The repository is sized as a full product rather than a prototype, and follows the same web-app approach used across the rest of the portfolio.',
-    impactText:
-      'Standardizes how audits are captured and reviewed, which makes findings easier to compare over time and harder to lose.',
-    impact: [
-      'Repeatable audit workflow',
-      'Structured findings instead of ad-hoc notes',
-      'Internal operations tool'
-    ],
-    tech: ['.NET', 'Angular'],
-    images: [],
-    liveUrl: '',
-    repoUrl: 'https://github.com/soyfidelfm/RaypakAudit'
-  },
-  {
-    id: 'borderfleetsupport',
-    slug: 'borderfleetsupport',
-    title: 'Border Fleet Support',
-    description:
-      'Operations web app for employee records and truck control at Border Fleet Support.',
-    overview:
-      'Border Fleet Support needed a single place for people and trucks. The application keeps employee records and fleet units together so dispatch and administration are not maintaining two disconnected lists. It is an early operations system in the same logistics line that later became YMS and WMS.',
-    architecture:
-      'Private web application focused on employee and truck registries. Built as a practical internal tool for a fleet-support operation.',
-    impactText:
-      'Centralizes staff and truck data for a border logistics operation, which is the first step toward controlled yard and warehouse systems.',
-    impact: [
-      'Employee registry',
-      'Truck and fleet record keeping',
-      'Internal operations database for BFS'
-    ],
-    tech: ['.NET'],
-    images: [],
-    liveUrl: '',
-    repoUrl: 'https://github.com/soyfidelfm/BorderFleetSupport'
-  },
-  {
-    id: 'inventorymern',
-    slug: 'inventorymern',
-    title: 'InventoryMERN',
-    description:
-      'Full-stack inventory prototype built with MongoDB, Express, React, and Node.js.',
-    overview:
-      'InventoryMERN is an inventory application used to practice and ship a complete MERN workflow: products, stock levels, and basic warehouse-style records on a JavaScript stack. It sits earlier in the timeline than WMS, but it is the same problem space: know what you have and where it is.',
-    architecture:
-      'Classic MERN architecture. MongoDB stores inventory documents, Express and Node expose the API, and React provides the operator UI.',
-    impactText:
-      'Demonstrates a complete inventory loop on the JavaScript stack before the later .NET warehouse platform.',
-    impact: [
-      'Product and stock CRUD',
-      'Full MERN implementation',
-      'Foundation for later WMS work'
-    ],
-    tech: ['MongoDB', 'Express', 'React', 'Node.js'],
-    images: [],
-    liveUrl: '',
-    repoUrl: 'https://github.com/soyfidelfm/InventoryMERN'
-  },
-  {
-    id: 'logisticsapp',
-    slug: 'logisticsapp',
-    title: 'LogisticsApp',
-    description:
-      'Early logistics prototype that preceded the current yard and warehouse platforms.',
-    overview:
-      'LogisticsApp is the first pass at the operational problems later solved by YMS and WMS: movements, units, and control in a logistics environment. It is smaller than the current platforms, but it shows the start of the same domain.',
-    architecture:
-      'Private prototype repository. Treated as the precursor to the Clean Architecture YMS and WMS codebases rather than the production system.',
-    impactText:
-      'Established the logistics domain that later scaled into yard management and warehouse management systems.',
-    impact: [
-      'Early logistics domain modeling',
-      'Direct predecessor to YMS and WMS'
-    ],
-    tech: ['.NET'],
-    images: [],
-    liveUrl: '',
-    repoUrl: 'https://github.com/soyfidelfm/LogisticsApp'
-  }
+  // {
+  //   id: 'raypakaudit',
+  //   slug: 'raypakaudit',
+  //   title: 'RaypakAudit',
+  //   description:
+  //     'Structured audit tool for equipment and process reviews in a Raypak operations context.',
+  //   overview:
+  //     'RaypakAudit is an internal application for running audits against equipment or process checklists. Instead of collecting findings in email and paper forms, the audit lives in a system that can be revisited, compared, and completed with a consistent structure.',
+  //   architecture:
+  //     'Private operational application. The repository is sized as a full product rather than a prototype, and follows the same web-app approach used across the rest of the portfolio.',
+  //   impactText:
+  //     'Standardizes how audits are captured and reviewed, which makes findings easier to compare over time and harder to lose.',
+  //   impact: [
+  //     'Repeatable audit workflow',
+  //     'Structured findings instead of ad-hoc notes',
+  //     'Internal operations tool'
+  //   ],
+  //   tech: ['.NET', 'Angular'],
+  //   images: [],
+  //   liveUrl: '',
+  //   repoUrl: 'https://github.com/soyfidelfm/RaypakAudit'
+  // },
+  // {
+  //   id: 'borderfleetsupport',
+  //   slug: 'borderfleetsupport',
+  //   title: 'Border Fleet Support',
+  //   description:
+  //     'Operations web app for employee records and truck control at Border Fleet Support.',
+  //   overview:
+  //     'Border Fleet Support needed a single place for people and trucks. The application keeps employee records and fleet units together so dispatch and administration are not maintaining two disconnected lists. It is an early operations system in the same logistics line that later became YMS and WMS.',
+  //   architecture:
+  //     'Private web application focused on employee and truck registries. Built as a practical internal tool for a fleet-support operation.',
+  //   impactText:
+  //     'Centralizes staff and truck data for a border logistics operation, which is the first step toward controlled yard and warehouse systems.',
+  //   impact: [
+  //     'Employee registry',
+  //     'Truck and fleet record keeping',
+  //     'Internal operations database for BFS'
+  //   ],
+  //   tech: ['.NET'],
+  //   images: [],
+  //   liveUrl: '',
+  //   repoUrl: 'https://github.com/soyfidelfm/BorderFleetSupport'
+  // },
+  // {
+  //   id: 'inventorymern',
+  //   slug: 'inventorymern',
+  //   title: 'InventoryMERN',
+  //   description:
+  //     'Full-stack inventory prototype built with MongoDB, Express, React, and Node.js.',
+  //   overview:
+  //     'InventoryMERN is an inventory application used to practice and ship a complete MERN workflow: products, stock levels, and basic warehouse-style records on a JavaScript stack. It sits earlier in the timeline than WMS, but it is the same problem space: know what you have and where it is.',
+  //   architecture:
+  //     'Classic MERN architecture. MongoDB stores inventory documents, Express and Node expose the API, and React provides the operator UI.',
+  //   impactText:
+  //     'Demonstrates a complete inventory loop on the JavaScript stack before the later .NET warehouse platform.',
+  //   impact: [
+  //     'Product and stock CRUD',
+  //     'Full MERN implementation',
+  //     'Foundation for later WMS work'
+  //   ],
+  //   tech: ['MongoDB', 'Express', 'React', 'Node.js'],
+  //   images: [],
+  //   liveUrl: '',
+  //   repoUrl: 'https://github.com/soyfidelfm/InventoryMERN'
+  // },
+  // {
+  //   id: 'logisticsapp',
+  //   slug: 'logisticsapp',
+  //   title: 'LogisticsApp',
+  //   description:
+  //     'Early logistics prototype that preceded the current yard and warehouse platforms.',
+  //   overview:
+  //     'LogisticsApp is the first pass at the operational problems later solved by YMS and WMS: movements, units, and control in a logistics environment. It is smaller than the current platforms, but it shows the start of the same domain.',
+  //   architecture:
+  //     'Private prototype repository. Treated as the precursor to the Clean Architecture YMS and WMS codebases rather than the production system.',
+  //   impactText:
+  //     'Established the logistics domain that later scaled into yard management and warehouse management systems.',
+  //   impact: [
+  //     'Early logistics domain modeling',
+  //     'Direct predecessor to YMS and WMS'
+  //   ],
+  //   tech: ['.NET'],
+  //   images: [],
+  //   liveUrl: '',
+  //   repoUrl: 'https://github.com/soyfidelfm/LogisticsApp'
+  // }
 ];
