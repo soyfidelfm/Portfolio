@@ -2,8 +2,14 @@ import { Injectable } from '@angular/core';
 import emailjs from '@emailjs/browser';
 
 const SESSION_KEY = 'portfolio_visit_notified';
+
+// Expanded bot / scraper detection
 const BOT_PATTERN =
-  /bot|crawl|spider|slurp|preview|facebookexternalhit|whatsapp|telegram|discord|lighthouse|pagespeed|headless/i;
+  /bot|crawl|spider|slurp|preview|facebookexternalhit|whatsapp|telegram|discord|lighthouse|pagespeed|headless|dataprovider|scrapy|python-requests|go-http-client|java\/|curl|wget|postman|insomnia|okhttp|apache-httpclient|libwww|httpclient|phantom|selenium|puppeteer|playwright|headlesschrome|semrush|ahrefs|mj12bot|dotbot|petalbot|bingbot|googlebot|yandex|baiduspider|sogou|exabot|ia_archiver|archive.org|wayback|uptimerobot|pingdom|statuscake|newrelic|datadog|site24x7|monitor|checker|probe|scanner/i;
+
+// Hosting / datacenter ISPs commonly used by bots and scrapers
+const BOT_ISP_PATTERN =
+  /ovh|digitalocean|linode|vultr|hetzner|amazon|aws|google cloud|azure|microsoft|cloudflare|fastly|akamai|leaseweb|contabo|choopa|psychz|quadranet|serverius|nforce|worldstream/i;
 
 const SERVICE_ID = 'service_r6rgmen';
 const TEMPLATE_ID = 'template_pa2uspr';
@@ -31,6 +37,14 @@ export class VisitorPingService {
 
   private async sendPing(): Promise<void> {
     const geo = await this.lookupVisitor();
+    const isp = geo.org || geo.connection?.isp || '';
+
+    // Skip if the ISP looks like a datacenter / bot host
+    if (BOT_ISP_PATTERN.test(isp)) {
+      console.log('Skipped bot-like ISP:', isp);
+      return;
+    }
+
     const locationParts = [geo.city, geo.region, geo.country].filter(Boolean);
     const pstTime = new Intl.DateTimeFormat('en-US', {
       timeZone: 'America/Los_Angeles',
@@ -48,7 +62,7 @@ export class VisitorPingService {
       action: [
         `Page visit: ${window.location.pathname || '/'}`,
         `Referrer: ${document.referrer || 'Direct / unknown'}`,
-        `ISP: ${geo.org || geo.connection?.isp || 'Unknown'}`,
+        `ISP: ${isp || 'Unknown'}`,
         `Browser: ${navigator.userAgent}`
       ].join(' | '),
       timestamp: pstTime
